@@ -1,0 +1,126 @@
+--- /dev/null
++++ b/Makefile
+@@ -0,0 +1,122 @@
++PREFIX=/usr
++INCDIR=$(PREFIX)/include
++LIBDIR=$(PREFIX)/lib
++
++VER_MAJ = 1
++LIB = libm2tk
++LIB_FILE = $(LIB).so
++SLIB_FILE = $(LIB).a
++
++CFLAGS = -Wall -fPIC
++
++SRC = 	utility/m2.c \
++	utility/m2align.c \
++	utility/m2dfs.c \
++	utility/m2draw.c \
++	utility/m2eh2bd.c \
++	utility/m2eh2bs.c \
++	utility/m2eh4bd.c \
++	utility/m2eh4bs.c \
++	utility/m2eh6bs.c \
++	utility/m2ehts.c \
++	utility/m2el2lmenu.c \
++	utility/m2elalign.c  \
++	utility/m2elbutton.c \
++	utility/m2elbuttonptr.c \
++	utility/m2elcombo.c \
++	utility/m2elcombofn.c \
++	utility/m2elcomboptr.c \
++	utility/m2elfnfmt.c \
++	utility/m2elhide.c \
++	utility/m2elinfo.c \
++	utility/m2ellabel.c \
++	utility/m2ellabelfn.c \
++	utility/m2ellabelp.c \
++	utility/m2ellabelptr.c \
++	utility/m2ellistbase.c \
++	utility/m2ellistcalc.c \
++	utility/m2ellistgrid.c \
++	utility/m2ellisth.c \
++	utility/m2ellistv.c \
++	utility/m2ellistxy.c \
++	utility/m2elradio.c \
++	utility/m2elroot.c \
++	utility/m2els8base.c \
++	utility/m2els8num.c \
++	utility/m2elsb.c \
++	utility/m2elsetval.c \
++	utility/m2elslbase.c \
++	utility/m2elspace.c \
++	utility/m2elstr.c \
++	utility/m2elstrlist.c \
++	utility/m2elstrptr.c \
++	utility/m2elstrup.c \
++	utility/m2elsubutl.c \
++	utility/m2eltext.c \
++	utility/m2eltoggle.c \
++	utility/m2eltsk.c \
++	utility/m2elu8base.c \
++	utility/m2elu8hs.c \
++	utility/m2elu8num.c \
++	utility/m2elu32.c \
++	utility/m2elxbm.c \
++	utility/m2fnarg.c \
++	utility/m2gfx.c \
++	utility/m2gfxutl.c \
++	utility/m2ghdummy.c \
++	utility/m2ghu8gbf.c \
++	utility/m2ghu8gbfs.c \
++	utility/m2ghu8gcffs.c \
++	utility/m2ghu8gfb.c \
++	utility/m2ghu8gffs.c \
++	utility/m2ghu8gicon.c \
++	utility/m2ghu8gutl.c \
++	utility/m2key.c \
++	utility/m2msg.c \
++	utility/m2navdatadn.c \
++	utility/m2navdataup.c \
++	utility/m2navfirst.c \
++	utility/m2navinit.c \
++	utility/m2navlast.c \
++	utility/m2navnext.c \
++	utility/m2navprev.c \
++	utility/m2navroot.c \
++	utility/m2navupdn.c \
++	utility/m2navutl.c \
++	utility/m2null.c \
++	utility/m2obj.c \
++	utility/m2opt.c \
++	utility/m2qk.c \
++	utility/m2rom.c \
++	utility/m2usrnext.c \
++	utility/m2usrprev.c \
++	utility/m2usrupdn.c \
++	utility/m2utls8d.c \
++	utility/m2utlstrdat.c \
++	utility/m2utlu8d.c
++
++OBJ = $(SRC:.c=.o) M2tk.o
++
++all: $(LIB_FILE) $(SLIB_FILE)
++
++$(LIB_FILE): $(OBJ)
++	$(CC) -shared -Wl,-soname,$@.$(VER_MAJ) -o $@ $? -lu8g
++
++$(SLIB_FILE): $(OBJ)
++	$(AR) cqs $(SLIB_FILE) $(OBJ)
++
++clean:
++	rm -f $(OBJ)
++
++distclean: clean
++	rm -f $(LIB_FILE) $(SLIB_FILE)
++
++install: all
++	mkdir -p $(DESTDIR)$(LIBDIR)
++	install -m 755 $(LIB_FILE) $(DESTDIR)$(LIBDIR)/$(LIB_FILE).$(VER_MAJ)
++	ln -sf $(LIB_FILE).$(VER_MAJ) $(DESTDIR)$(LIBDIR)/$(LIB_FILE)
++	install -m 755 $(SLIB_FILE) $(DESTDIR)$(LIBDIR)
++	mkdir -p $(DESTDIR)$(INCDIR)
++	install -pm 644 utility/m2.h $(DESTDIR)$(INCDIR)
++	install -pm 644 utility/m2ghu8g.h $(DESTDIR)$(INCDIR)
++	install -pm 644 M2tk.h $(DESTDIR)$(INCDIR)
+\ No newline at end of file

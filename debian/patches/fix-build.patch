@@ -1,0 +1,24 @@
+--- a/utility/m2ghu8g.h
++++ b/utility/m2ghu8g.h
+@@ -26,8 +26,8 @@
+ #ifndef _M2GHU8G_H
+ #define _M2GHU8G_H
+ 
+-#include "utility/m2.h"
+-#include "utility/u8g.h"
++#include "m2.h"
++#include <u8g.h>
+ 
+ #ifdef __cplusplus
+ extern "C" {
+--- a/utility/m2ghu8gutl.c
++++ b/utility/m2ghu8gutl.c
+@@ -338,7 +338,7 @@
+       	y -= arg->y;
+ 	y -= arg->h;
+ 	y++;			/* 13 Jan 2013: Issue 95 */
+-      	u8g_DrawXBMP(m2_u8g, x, y, arg->w, arg->h, (const char *)arg->s);
++      	u8g_DrawXBMP(m2_u8g, x, y, arg->w, arg->h, U8G_PSTR(arg->s));
+       }
+   }
+ 

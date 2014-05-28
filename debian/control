@@ -1,0 +1,23 @@
+Source: libm2tk
+Priority: optional
+Maintainer: David Lechner <david@lechnology.com>
+Build-Depends: debhelper (>= 9.0.0), libu8g-dev
+Standards-Version: 3.9.5
+Section: libs
+Homepage: https://code.google.com/p/m2tklib/
+Vcs-Git: git://github.com/ev3dev-dpkg/libm2tk.git
+Vcs-Browser: https://github.com/ev3dev-dpkg/libm2tk
+
+Package: libm2tk-dev
+Section: libdevel
+Architecture: any
+Depends: libm2tk1 (= ${binary:Version})
+Description: Graphical user interface library for embedded systems.
+ Graphical toolkit that runs on top of u8glib that provides widgets and stuff.
+
+Package: libm2tk1
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Graphical user interface library for embedded systems.
+ Graphical toolkit that runs on top of u8glib that provides widgets and stuff.

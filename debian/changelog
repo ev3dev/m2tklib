@@ -1,0 +1,5 @@
+libm2tk (1.11-ev3dev1~2) stable; urgency=low
+
+  * Initial release
+
+ -- David Lechner <david@lechnology.com>  Tue, 27 May 2014 15:57:01 -0500
