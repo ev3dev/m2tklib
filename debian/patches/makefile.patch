@@ -10,7 +10,7 @@
 +LIB_FILE = $(LIB).so
 +SLIB_FILE = $(LIB).a
 +
-+CFLAGS = -Wall -fPIC
++CFLAGS = -Wall -fPIC -g
 +
 +SRC = 	utility/m2.c \
 +	utility/m2align.c \
@@ -123,4 +123,3 @@
 +	install -pm 644 utility/m2.h $(DESTDIR)$(INCDIR)
 +	install -pm 644 utility/m2ghu8g.h $(DESTDIR)$(INCDIR)
 +	install -pm 644 M2tk.h $(DESTDIR)$(INCDIR)
-\ No newline at end of file

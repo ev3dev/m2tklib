@@ -11,9 +11,11 @@ Vcs-Browser: https://github.com/ev3dev-dpkg/libm2tk
 Package: libm2tk-dev
 Section: libdevel
 Architecture: any
-Depends: libm2tk1 (= ${binary:Version})
+Depends: libm2tk1 (= ${binary:Version}), ${misc:Depends}
 Description: Graphical user interface library for embedded systems.
  Graphical toolkit that runs on top of u8glib that provides widgets and stuff.
+ .
+ This package contains the header files for libm2tk1.
 
 Package: libm2tk1
 Section: libs
