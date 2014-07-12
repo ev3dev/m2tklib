@@ -1,3 +1,9 @@
+libm2tk (1.11-ev3dev2) stable; urgency=medium
+
+  * don't strip debug symbols
+
+ -- David Lechner <david@lechnology.com>  Fri, 11 Jul 2014 21:52:10 -0500
+
 libm2tk (1.11-ev3dev1) stable; urgency=low
 
   * Initial release
