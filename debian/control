@@ -1,12 +1,12 @@
-Source: libm2tk
+Source: m2tklib
 Priority: optional
 Maintainer: David Lechner <david@lechnology.com>
 Build-Depends: debhelper (>= 9.0.0), libu8g-dev
 Standards-Version: 3.9.5
 Section: libs
 Homepage: https://code.google.com/p/m2tklib/
-Vcs-Git: git://github.com/ev3dev-dpkg/libm2tk.git
-Vcs-Browser: https://github.com/ev3dev-dpkg/libm2tk
+Vcs-Git: git://github.com/ev3dev-dpkg/m2tklib.git
+Vcs-Browser: https://github.com/ev3dev-dpkg/m2tklib
 
 Package: libm2tk-dev
 Section: libdevel
